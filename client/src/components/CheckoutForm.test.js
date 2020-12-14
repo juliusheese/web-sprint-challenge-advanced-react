@@ -7,13 +7,13 @@ import CheckoutForm from "./CheckoutForm";
 
 
 test("form header renders", async () => {
-    render(<Fetch url="/checkout" />)
+    render(url = "/checkout")
     await waitFor(() => screen.getByRole('heading'))
     expect(screen.getByRole('heading')).toHaveTextContent
 });
 
 test("form shows success message on submit with form details", async () => {
-    render(<Fetch url="/checkout" />)
+    render(url = "/checkout")
     fireEvent.click(screen.getByText('Checkout'))
     expect(screen.getByRole('success-message')).toHaveTextContent('You have ordered some plants!')
 });
