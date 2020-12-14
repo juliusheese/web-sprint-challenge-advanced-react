@@ -14,7 +14,7 @@ test("form header renders", async () => {
 
 test("form shows success message on submit with form details", async () => {
     render("/checkout")
-    fireEvent.click(screen.getByText('Checkout'))
+    click(screen.getByText('Checkout'))
     expect(screen.getByRole('success-message')).toHaveTextContent('You have ordered some plants!')
 });
 
