@@ -10,7 +10,7 @@ export default class PlantList extends Component {
   componentDidMount() {
     axios.get(`http://localhost:3333/plants`)
       .then(res => {
-        res = this.state.plant;
+        this.state.plants = res.data.plantsData;
       })
   }
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
